@@ -10,3 +10,5 @@ Added environment variables:
 * API=yes/no
 * API_KEY=changeme
 * AXFR_IPS=127.0.0.1,=127.0.0.2
+* ONLY_NOTIFY=127.0.0.1
+* ALSO_NOTIFY=127.0.0.1

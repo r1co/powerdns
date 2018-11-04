@@ -43,6 +43,10 @@ if [ ! -z "$AXFR_IPS" ]
 then
 	echo "AXFR enabled: $AXFR_IPS"
 	echo "allow-axfr-ips=$AXFR_IPS" > $AXFR_FILE
+
+	[[ ! -z "$ONLY_NOTIFY" ]] && echo "only-notify=$ONLY_NOTIFY" >> $AXFR_FILE
+	[[ ! -z "$ALSO_NOTIFY" ]] && echo "also-notify=$ALSO_NOTIFY" >> $AXFR_FILE
+
 else
 	echo "AXFR disabled."
 fi
