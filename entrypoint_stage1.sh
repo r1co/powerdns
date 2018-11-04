@@ -4,7 +4,7 @@ PDNS_CONFD="/etc/pdns/conf.d"
 
 API_FILE="$PDNS_CONFD/10-api.conf"
 WEBSERVER_FILE="$PDNS_CONFD/20-webserver.conf"
-
+AXFR_FILE="$PDNS_CONFD/30-axfr.conf"
 
 
 if [ ! -z "$WEBSERVER" ] && [ $WEBSERVER = "yes" ]
@@ -37,6 +37,17 @@ then
 else
 	echo "API disabled."
 fi
+
+
+if [ ! -z "$AXFR_IPS" ]
+then
+	echo "AXFR enabled: $AXFR_IPS"
+	echo "allow-axfr-ips=$AXFR_IPS" > $AXFR_FILE
+else
+	echo "AXFR disabled."
+fi
+
+
 
 
 /entrypoint_stage2.sh

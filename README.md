@@ -9,3 +9,4 @@ Added environment variables:
 * WEBSERVER_PORT=8081
 * API=yes/no
 * API_KEY=changeme
+* AXFR_IPS=127.0.0.1,=127.0.0.2
